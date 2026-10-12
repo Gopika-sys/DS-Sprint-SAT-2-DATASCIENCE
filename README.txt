@@ -1,38 +1,52 @@
-GridSense Energy Services — Electricity Consumption Insight
-PRACTICE DATASET (synthetic; not official company data)
 
-Coverage: hourly readings from 2025-01-01 to 2025-03-01 (60 days).
-Files:
-- meter_readings.csv: timestamp, customer, consumption
-- customers.csv: customer, segment, area, connection_type
-- weather.csv: timestamp, temperature, humidity, rain
-- calendar.csv: timestamp, weekday, holiday, season
-- tariff.csv: timestamp, tariff_category, peak_period, tariff_rate_band
+# ⚡ Electricity Consumption Insight
 
-Data-quality issues intentionally included:
-- Some missing consumption readings
-- Duplicate meter records
-- A few negative consumption values
-- One inconsistent customer segment label ("residential")
-- Missing temperature/humidity values in weather.csv
+---
 
-Suggested join plan:
-1. Normalize customers.segment values (e.g. title case).
-2. Merge meter_readings with customers on customer.
-3. Merge with weather and calendar on timestamp.
-4. Merge tariff on timestamp and normalized segment = tariff_category.
-   tariff.csv has one row per timestamp per tariff category, so this join gives the matching tariff period for each customer record.
+**Electricity Consumption Insight** is a data science project designed to analyze electricity usage patterns, understand consumption trends, and identify factors influencing energy demand using **Data Analytics, Machine Learning, and Data Visualization**.
 
-Peak definition in this practice dataset:
-Peak = hours 07:00–10:59 or 17:00–21:59; otherwise Off-Peak.
-This is a teaching assumption, not a real utility tariff rule.
+The project uses customer, meter reading, tariff, weather, and calendar datasets to uncover meaningful insights and support data-driven energy management.
 
-Suggested analysis:
-- Peak demand by hour and weekday/weekend
-- Temperature vs consumption
-- Segment comparison
-- Area-level standard deviation/variability
-- Peak vs off-peak consumption
-- Optional regression: predict consumption from time, weather, segment, area, and tariff features
+## 🚀 Key Features
 
-Do not report model scores or findings as real-world facts; calculate them from the cleaned data.
+- 📊 **Exploratory Data Analysis** — Analyze electricity consumption patterns and trends.
+- 🧹 **Data Preprocessing** — Handle missing values and prepare datasets for analysis.
+- ⚙️ **Feature Engineering** — Create useful features from time, weather, and customer data.
+- 🤖 **Machine Learning** — Apply predictive models to analyze electricity consumption.
+- 📈 **Data Visualization** — Present insights through charts and graphs.
+- 💡 **Energy Insights** — Identify consumption patterns and support efficient energy usage.
+
+## 🛠️ Tech Stack
+
+- **Language:** Python
+- **Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+- **Tools:** Google Colab, Jupyter Notebook, Microsoft Excel
+- **Data:** Customer, meter readings, tariff, weather, and calendar datasets
+
+## 📂 Project Files
+
+- `GoogleColab_SAT_2_DS.ipynb` — Data analysis and modeling
+- `Electricity_Consumption_Analysis.xlsx` — Analysis results
+- `customers.csv` — Customer information
+- `meter_readings.csv` — Electricity consumption records
+- `tariff.csv` — Electricity tariff details
+- `weather.csv` — Weather data
+- `calendar.csv` — Calendar information
+
+## 🎯 Objective
+
+To transform electricity consumption data into meaningful insights, understand usage behavior, and explore machine learning approaches that support better energy planning and management.
+
+---
+
+## 👩‍💻 Author
+
+**Gopika**
+
+🔗 **GitHub:** [Gopika-sys](https://github.com/Gopika-sys)
+
+📌 **Use Case:** Electricity Consumption Insight — DS Sprint Assessment
+
+---
+
+⚡ **Turning Electricity Data into Actionable Insights with Data Science and Machine Learning.**
